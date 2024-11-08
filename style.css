@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(139, 102, 67);
+}
+
+.board {
+    background-color: rgb(0, 0, 0, 0.8);
+    color: rgb(225, 165, 108);
+    width: 500px;
+    height: 300px;
+    text-align: center;
+}
+
+.board h1 {
+    padding-top: 20px;
+}
+
+.board button {
+    padding: 30px 120px 30px 120px;
+    margin-top: 100px;
+}
