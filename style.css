@@ -4,22 +4,58 @@
 }
 
 body {
-    background-color: rgb(139, 102, 67);
+    background-image: linear-gradient(90deg,#56CCF2, #2F80ED, #56CCF2, #2F80ED);
+    background-size: 400% 400%;
+    animation: gradientMovement 5s ease infinite;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes gradientMovement {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .board {
-    background-color: rgb(0, 0, 0, 0.8);
-    color: rgb(225, 165, 108);
+    background-color: rgba(255, 255, 255, 0.2);
+    color: rgb(255, 255, 255);
     width: 500px;
     height: 300px;
     text-align: center;
+    border: solid 4px rgb(255, 255, 255);
+    border-radius: 30px;
+    box-shadow: 0px 0px 50px white;
 }
 
 .board h1 {
     padding-top: 20px;
+    font-size: 45px;
 }
 
 .board button {
-    padding: 30px 120px 30px 120px;
-    margin-top: 100px;
+    cursor: pointer;
+    font-family: 'RichEatinAllCaps';
+    padding: 10px 50px;
+    border: white 1px solid;
+    border-radius: 30px;
+    margin-top: 50px;
+    color: white;
+    font-size: 30px;
+    background-color: #2F80ED;
+    transition: 500ms;
+}
+
+.board button:hover {
+    background-color: #56CCF2;
+    transition: 500ms;
+    transform: scale(1.2);
 }
