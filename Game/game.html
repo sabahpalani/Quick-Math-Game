@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="gamestyle.css" />
     <link
       rel="stylesheet"
       media="screen"
@@ -14,15 +14,16 @@
     <title>Math With Mosa!</title>
   </head>
   <body>
-    <div class="board">
-      <h1>MATH WITH MOSA!</h1>
-      <p>
-        This is a site that challenges your basic math skills with fun,
-        interactive problems designed to improve your speed and accuracy in
-        addition, subtraction, multiplication, and division.
-      </p>
-      <button id="lplay">Let's Play!</button>
+    <div class="board2" id="board2">
+      <h1 class="question" id="question">What is ... ?</h1>
+      <input
+        class="userAnswer"
+        type="number"
+        id="userAnswer"
+        placeholder="Enter your answer"
+      />
+      <button id="submitBtn" onclick="">Submit</button>
     </div>
-    <script src="script.js"></script>
+    <script src="gamescript.js"></script>
   </body>
 </html>

@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #56ccf2;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.board2 {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: rgb(255, 255, 255);
+  width: 1000px;
+  height: 600px;
+  text-align: center;
+  border: solid 4px rgb(255, 255, 255);
+  border-radius: 30px;
+  box-shadow: 0px 0px 50px white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.board2 h1 {
+  font-family: "RichEatinAllCaps";
+  font-size: 100px;
+  position: relative;
+  top: 100px;
+}
+
+.board2 input {
+  position: relative;
+  text-align: center;
+  top: 200px;
+  font-size: 80px;
+  border: #2f80ed 3px solid;
+  border-radius: 30px;
+  color: black;
+  background-color: white;
+}
+
+.board2 input[type="number"]::-webkit-outer-spin-button,
+.board2 input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.board2 input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.board2 input::placeholder {
+  color: black;
+}
+
+.board2 input:focus {
+  outline: none;
+}
+
+.board2 button {
+  position: relative;
+  top: 210px;
+  cursor: pointer;
+  font-family: "RichEatinAllCaps";
+  padding: 10px 100px;
+  border: white 3px solid;
+  border-radius: 30px;
+  color: white;
+  font-size: 30px;
+  background-color: #2f80ed;
+  transition: 300ms;
+}
+
+.board2 button:hover {
+  background-color: #56ccf2;
+  transition: 300ms;
+  transform: scale(1.2);
+}
