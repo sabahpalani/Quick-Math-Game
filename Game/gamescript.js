@@ -2,8 +2,8 @@ function randomOperation() {
   const operations = ["+", "-", "*", "/"];
   const operation = operations[Math.floor(Math.random() * operations.length)];
 
-  const numOne = Math.floor(Math.random() * 10) + 1;
-  const numTwo = Math.floor(Math.random() * 10) + 1;
+  let numOne = Math.floor(Math.random() * 10) + 1;
+  let numTwo = Math.floor(Math.random() * 10) + 1;
 
   let question, answer;
 
@@ -13,6 +13,9 @@ function randomOperation() {
       answer = numOne + numTwo;
       break;
     case "-":
+        if (numOne < numTwo) {
+            [numOne, numTwo] = [numTwo, numOne];
+        }
       question = `${numOne} - ${numTwo}`;
       answer = numOne - numTwo;
       break;
@@ -21,8 +24,8 @@ function randomOperation() {
       answer = numOne * numTwo;
       break;
     case "/":
-      question = `${numOne} * ${numTwo} / ${numOne}`;
-      answer = numTwo;
+      question = `${numOne} / ${numTwo}`;
+      answer = numOne / numTwo;
       break;
   }
 
@@ -46,18 +49,17 @@ function randomOperation() {
     inputElement.value = "";
 
     setTimeout(() => {
-      randomOperation();
-      questionElement.innerText = `What is ${question}?`;
       questionElement.style.color = "";
+      randomOperation();
     }, 2000);
   };
 
-  inputElement.addEventListener("keydown", function (event) {
+  inputElement.onkeydown = function (event) {
     if (event.key === "Enter") {
       event.preventDefault();
       submitButton.click();
     }
-  });
+  };
 }
 
 window.onload = randomOperation;
