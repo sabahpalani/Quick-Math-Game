@@ -24,6 +24,10 @@ function randomOperation() {
       answer = numOne * numTwo;
       break;
     case "/":
+      do {
+        numOne = Math.floor(Math.random() * 10) + 1;
+        numTwo = Math.floor(Math.random() * 10) + 1;
+      } while (numOne % numTwo !== 0 || numOne / numTwo > 10);
       question = `${numOne} / ${numTwo}`;
       answer = numOne / numTwo;
       break;
