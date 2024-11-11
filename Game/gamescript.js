@@ -55,7 +55,7 @@ function randomOperation() {
     setTimeout(() => {
       questionElement.style.color = "";
       randomOperation();
-    }, 2000);
+    }, 500);
   };
 
   inputElement.onkeydown = function (event) {
