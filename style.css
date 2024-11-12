@@ -58,5 +58,5 @@ body {
 .board button:hover {
   background-color: #56ccf2;
   transition: 500ms;
-  transform: scale(1.2);
+  transform: scale(1.05);
 }
