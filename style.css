@@ -38,7 +38,7 @@ body {
 
 .board h1 {
   padding-top: 20px;
-  font-size: 50px;
+  font-size: 45px;
   font-family: "RichEatinAllCaps";
 }
 
@@ -48,7 +48,7 @@ body {
   padding: 10px 50px;
   border: white 1px solid;
   border-radius: 30px;
-  margin-top: 50px;
+  margin-top: 30px;
   color: white;
   font-size: 30px;
   background-color: #2f80ed;

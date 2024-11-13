@@ -1,3 +1,29 @@
+let timeLeft = 60;
+let timerInterval;
+
+function startTimer() {
+  const timerElement = document.getElementById("timer");
+
+  timerInterval = setInterval(() => {
+    timerElement.textContent = `${timeLeft}`;
+    timeLeft--;
+
+    if (timeLeft < 0) {
+      clearInterval(timerInterval);
+      endGame();
+    }
+  }, 1000);
+}
+
+function endGame() {
+  document.getElementById("gameOverMessage").innerText = "Game Over!";
+  document.getElementById("gameOverMessage").style.display = "block";
+  document.getElementById("question").style.display = "none";
+  document.getElementById("userAnswer").style.display = "none";
+  document.getElementById("submitBtn").style.display = "none";
+  document.getElementById("timer").style.display = "none";
+}
+
 function randomOperation() {
   const operations = ["+", "-", "*", "/"];
   const operation = operations[Math.floor(Math.random() * operations.length)];
@@ -13,9 +39,7 @@ function randomOperation() {
       answer = numOne + numTwo;
       break;
     case "-":
-        if (numOne < numTwo) {
-            [numOne, numTwo] = [numTwo, numOne];
-        }
+      if (numOne < numTwo) [numOne, numTwo] = [numTwo, numOne];
       question = `${numOne} - ${numTwo}`;
       answer = numOne - numTwo;
       break;
@@ -66,4 +90,7 @@ function randomOperation() {
   };
 }
 
-window.onload = randomOperation;
+window.onload = () => {
+  startTimer();
+  randomOperation();
+};
