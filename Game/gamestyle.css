@@ -92,5 +92,13 @@ body {
   color: #2f80ed;
   font-family: "RichEatinAllCaps";
   position: relative;
-  top: 200px;
+  top: 100px;
+}
+
+#scoreMessage {
+  font-size: 150px;
+  color: #2f80ed;
+  font-family: "RichEatinAllCaps";
+  position: relative;
+  top: 100px;
 }

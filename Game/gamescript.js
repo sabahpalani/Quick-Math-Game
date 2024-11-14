@@ -1,5 +1,6 @@
 let timeLeft = 60;
 let timerInterval;
+let correctAnswers = 0;
 
 function startTimer() {
   const timerElement = document.getElementById("timer");
@@ -22,6 +23,8 @@ function endGame() {
   document.getElementById("userAnswer").style.display = "none";
   document.getElementById("submitBtn").style.display = "none";
   document.getElementById("timer").style.display = "none";
+  document.getElementById("scoreMessage").innerText = `Score: ${correctAnswers}`;
+  document.getElementById("scoreMessage").style.display = "block";
 }
 
 function randomOperation() {
@@ -31,29 +34,30 @@ function randomOperation() {
   let numOne = Math.floor(Math.random() * 10) + 1;
   let numTwo = Math.floor(Math.random() * 10) + 1;
 
-  let question, answer;
+  let currentQuestion;
+  let correctAnswer;
 
   switch (operation) {
     case "+":
-      question = `${numOne} + ${numTwo}`;
-      answer = numOne + numTwo;
+      currentQuestion = `${numOne} + ${numTwo}`;
+      correctAnswer = numOne + numTwo;
       break;
     case "-":
       if (numOne < numTwo) [numOne, numTwo] = [numTwo, numOne];
-      question = `${numOne} - ${numTwo}`;
-      answer = numOne - numTwo;
+      currentQuestion = `${numOne} - ${numTwo}`;
+      correctAnswer = numOne - numTwo;
       break;
     case "*":
-      question = `${numOne} * ${numTwo}`;
-      answer = numOne * numTwo;
+      currentQuestion = `${numOne} * ${numTwo}`;
+      correctAnswer = numOne * numTwo;
       break;
     case "/":
       do {
         numOne = Math.floor(Math.random() * 10) + 1;
         numTwo = Math.floor(Math.random() * 10) + 1;
       } while (numOne % numTwo !== 0 || numOne / numTwo > 10);
-      question = `${numOne} / ${numTwo}`;
-      answer = numOne / numTwo;
+      currentQuestion = `${numOne} / ${numTwo}`;
+      correctAnswer = numOne / numTwo;
       break;
   }
 
@@ -61,14 +65,15 @@ function randomOperation() {
   const inputElement = document.getElementById("userAnswer");
   const submitButton = document.getElementById("submitBtn");
 
-  questionElement.innerText = `What is ${question}?`;
+  questionElement.innerText = `What is ${currentQuestion}?`;
 
   submitButton.onclick = function () {
     const userAnswer = inputElement.value;
 
-    if (parseInt(userAnswer) === answer) {
+    if (parseInt(userAnswer) === correctAnswer) {
       questionElement.innerText = "Correct!";
       questionElement.style.color = "green";
+      correctAnswers++;
     } else {
       questionElement.innerText = "Incorrect!";
       questionElement.style.color = "red";
