@@ -25,6 +25,7 @@ function endGame() {
   document.getElementById("timer").style.display = "none";
   document.getElementById("scoreMessage").innerText = `Score: ${correctAnswers}`;
   document.getElementById("scoreMessage").style.display = "block";
+  document.getElementById("goBack").style.display = "block";
 }
 
 function randomOperation() {
@@ -99,3 +100,7 @@ window.onload = () => {
   startTimer();
   randomOperation();
 };
+
+goBack.addEventListener("click", function () {
+  window.location.href = "../index.html";
+});

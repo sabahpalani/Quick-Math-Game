@@ -67,7 +67,7 @@ body {
   outline: none;
 }
 
-.board2 button {
+#submitBtn {
   position: relative;
   top: 170px;
   cursor: pointer;
@@ -89,16 +89,38 @@ body {
 
 #gameOverMessage {
   font-size: 150px;
-  color: #2f80ed;
+  color: #ffffff;
   font-family: "RichEatinAllCaps";
   position: relative;
   top: 100px;
 }
 
 #scoreMessage {
+  display: none;
   font-size: 150px;
-  color: #2f80ed;
+  color: #ffffff;
   font-family: "RichEatinAllCaps";
   position: relative;
+  top: 80px;
+}
+
+#goBack {
+  display: none;
+  position: relative;
   top: 100px;
+  cursor: pointer;
+  font-family: "RichEatinAllCaps";
+  padding: 10px 50px;
+  border: white 1px solid;
+  border-radius: 30px;
+  color: white;
+  font-size: 30px;
+  background-color: #2f80ed;
+  transition: 500ms;
+}
+
+#goBack:hover {
+  background-color: #56ccf2;
+  transition: 500ms;
+  transform: scale(1.05);
 }
