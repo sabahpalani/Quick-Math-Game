@@ -26,6 +26,9 @@ function endGame() {
   document.getElementById("scoreMessage").innerText = `Score: ${correctAnswers}`;
   document.getElementById("scoreMessage").style.display = "block";
   document.getElementById("goBack").style.display = "block";
+  document.body.style.backgroundImage = 'linear-gradient(90deg, #56ccf2, #2f80ed, #56ccf2, #2f80ed)';
+  document.body.style.backgroundSize = '400% 400%';
+  document.body.style.animation = 'gradientMovement 5s ease infinite';
 }
 
 function randomOperation() {
